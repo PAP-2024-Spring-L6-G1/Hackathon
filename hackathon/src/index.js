@@ -5,11 +5,11 @@ import App from './App';
 import Teams from './Teams';
 import reportWebVitals from './reportWebVitals';
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/", // This is the relative URL path which users can bookmark and navigate to
     element: <App /> // This is the React Component to load when navigating to the associated path URL
