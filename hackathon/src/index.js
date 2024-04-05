@@ -15,19 +15,16 @@ const router = createBrowserRouter([
     element: <App /> // This is the React Component to load when navigating to the associated path URL
   },
   {
-    path: "/Hackathon", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
-  },
-  {
     path: "/teams",
-    element: <Teams />
+    element: <Teams />,
+    children: [
+      {
+        path: ":myTeam",
+        element: <Teams />,
+      },
+    ],
   }
   ,
-  // {
-  //   path: "/teams/:Name",
-  //   element: <App />
-  // }
-  // ,
   {
     path: "/login",
     element: <App />
