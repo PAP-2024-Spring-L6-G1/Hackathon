@@ -11,7 +11,7 @@ export default function NavBar() {
     };
 
     return (
-        <nav class="relative px-4 py-4 flex justify-between items-center bg-white" style={navStyle}>
+        <nav className="relative px-4 py-4 flex justify-between items-center bg-white" style={navStyle}>
             <NavLeft/>
             <NavCenter/>
             <NavRight/>

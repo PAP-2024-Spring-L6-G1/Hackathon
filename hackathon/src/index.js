@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Teams from './Teams';
 import reportWebVitals from './reportWebVitals';
 import {
   createHashRouter,
@@ -14,31 +15,31 @@ const router = createHashRouter([
     element: <App /> // This is the React Component to load when navigating to the associated path URL
   },
   {
-    path: "/teams", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
+    path: "/teams",
+    element: <Teams />
+  }
+  ,
+  // {
+  //   path: "/teams/:Name",
+  //   element: <App />
+  // }
+  // ,
+  {
+    path: "/login",
+    element: <App />
   }
   ,
   {
-    path: "/teams/:Name", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
-  }
-  ,
-  {
-    path: "/login", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
-  }
-  ,
-  {
-    path: "/logout", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
+    path: "/logout",
+    element: <App />
   },
   {
-    path: "/signup", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
+    path: "/signup",
+    element: <App />
   },
   {
-    path: "/admin", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
+    path: "/admin",
+    element: <App />
   }
   // More routes...
 ]);
