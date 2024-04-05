@@ -1,4 +1,5 @@
 export default function NavCenter() {
     return (
-        <div className='semibold text-xl'>Countdown</div>)
+        <div className='semibold text-xl text-slate-100'>Hackathon begins in: Countdown</div>
+    )
 }
