@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+
+import NavBar from './components/Nav/Navbar';
+import Home from './components/Home/Home';
+import Teams from './components/Teams/Teams';
 import App from './App';
+
 import reportWebVitals from './reportWebVitals';
 import {
   createHashRouter,
@@ -11,15 +16,15 @@ import {
 const router = createHashRouter([
   {
     path: "/", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
+    element: <Home /> // This is the React Component to load when navigating to the associated path URL
   },
   {
     path: "/teams", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
+    element: <Teams /> // This is the React Component to load when navigating to the associated path URL
   }
   ,
   {
-    path: "/teams/:Name", // This is the relative URL path which users can bookmark and navigate to
+    path: "/teams/:name", // This is the relative URL path which users can bookmark and navigate to
     element: <App /> // This is the React Component to load when navigating to the associated path URL
   }
   ,
@@ -46,6 +51,7 @@ const router = createHashRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <NavBar />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
