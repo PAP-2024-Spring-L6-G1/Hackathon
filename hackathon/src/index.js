@@ -5,7 +5,7 @@ import './index.css';
 import NavBar from './components/Nav/Navbar';
 import Home from './components/Home/Home';
 import Teams from './components/Teams/Teams';
-import Footer from './components/Home/Footer';
+import Footer from './components/Footer/Footer';
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
