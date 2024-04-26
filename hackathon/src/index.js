@@ -6,6 +6,9 @@ import NavBar from './components/Nav/Navbar';
 import Home from './components/Home/Home';
 import Teams from './components/Teams/Teams';
 import Footer from './components/Footer/Footer';
+import Login from './components/Login/Login';
+import Signup from './components/Login/Signup';
+import Admin from './components/Login/Admin';
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
@@ -22,29 +25,22 @@ const router = createHashRouter([
   {
     path: "/teams", // This is the relative URL path which users can bookmark and navigate to
     element: <Teams /> // This is the React Component to load when navigating to the associated path URL
-  }
-  ,
+  },
   {
     path: "/teams/:name", // This is the relative URL path which users can bookmark and navigate to
     element: <App /> // This is the React Component to load when navigating to the associated path URL
-  }
-  ,
+  },
   {
     path: "/login", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
-  }
-  ,
-  {
-    path: "/logout", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
+    element: <Login /> // This is the React Component to load when navigating to the associated path URL
   },
   {
     path: "/signup", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
+    element: <Signup /> // This is the React Component to load when navigating to the associated path URL
   },
   {
     path: "/admin", // This is the relative URL path which users can bookmark and navigate to
-    element: <App /> // This is the React Component to load when navigating to the associated path URL
+    element: <Admin /> // This is the React Component to load when navigating to the associated path URL
   }
   // More routes...
 ]);
