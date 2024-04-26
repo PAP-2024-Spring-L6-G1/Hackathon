@@ -3,6 +3,7 @@ export default function Login() {
   return (
     <div className="Login text-gray-200 flex justify-center">
       <form className='mt-6'>
+      <h1 className="text-3xl text-white block text-center mb-6">Log In</h1>
         <label className='block mb-6'>Please enter your information below to login to your existing account:</label>
         <label>Username:
           <input className='text-black block' type="text" />
