@@ -12,10 +12,9 @@ import Admin from './components/Login/Admin';
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
-import {
-  createHashRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createHashRouter, RouterProvider, } from "react-router-dom";
+import AuthProvider  from "react-auth-kit";
+import createStore from 'react-auth-kit/createStore';
 
 const router = createHashRouter([
   {
@@ -45,12 +44,21 @@ const router = createHashRouter([
   // More routes...
 ]);
 
+const store = createStore({
+  authName:'_auth',
+  authType:'cookie',
+  cookieDomain: window.location.hostname,
+  cookieSecure: window.location.protocol === 'https:',
+});
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavBar />
-    <RouterProvider router={router} />
-    <Footer />
+    <AuthProvider store={store}>
+      <NavBar />
+      <RouterProvider router={router} />
+      <Footer />
+    </AuthProvider>
   </React.StrictMode>
 );
 
