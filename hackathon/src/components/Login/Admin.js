@@ -8,9 +8,9 @@ export default function Admin() {
         <label>New countdown deadline datetime:
           <input className='text-black block' type="datetime-local" />
         </label><br></br>
-        <label>Allow submissions:
+        {/* <label>Allow submissions:
           <input className='text-black' type="checkbox" />
-        </label><br></br>
+        </label><br></br> */}
         <button className='mt-6 lg:inline-block py-2 px-6 lg:mr-3 bg-red-500 hover:bg-red-800 text-sm text-white font-semibold rounded-xl transition duration-200'>Submit</button>
       </form>
     </div>

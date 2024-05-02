@@ -6,7 +6,7 @@ import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
 export default function Login() {
 
   const signIn = useSignIn();
-  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [formData, setFormData] = useState({ userName: '', password: '' });
 
   const onSubmit = (e) => {
     console.log(formData);
@@ -20,11 +20,11 @@ export default function Login() {
               token: res.data.token,
               type: 'Bearer'
             },
-            //   refresh: res.data.refreshToken;
-            userState: true
+            refresh: res.data.refreshToken,
+            userState: res.data.authUserState
           })) { // Only if you are using refreshToken feature
             // Redirect or do-something
-            console.log('hello')
+            console.log('Login success?')
           } else {
             //Throw error
           }
@@ -38,7 +38,7 @@ export default function Login() {
   return (
     <div className="Login text-gray-200 flex justify-center">
       <form className='mt-6' onSubmit={onSubmit}>
-        <h1 className="text-3xl text-white block text-center mb-6">Log In {useIsAuthenticated}</h1>
+        <h1 className="text-3xl text-white block text-center mb-6">Log In</h1>
         <label className='block mb-6'>Please enter your information below to login to your existing account:</label>
         <label>Username:
           <input className='text-black block' type="text" onChange={(e) => setFormData({ ...formData, userName: e.target.value })} />
