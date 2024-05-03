@@ -1,12 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
 import useSignIn from 'react-auth-kit/hooks/useSignIn';
-import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
+import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated';
+import {useNavigate, Navigate} from 'react-router-dom';
 
 export default function Login() {
 
   const signIn = useSignIn();
   const [formData, setFormData] = useState({ userName: '', password: '' });
+  const isAuthenticated = useIsAuthenticated();
+  const navigate = useNavigate()
 
   const onSubmit = (e) => {
     console.log(formData);
@@ -24,15 +27,16 @@ export default function Login() {
             userState: res.data.authUserState
           })) { // Only if you are using refreshToken feature
             // Redirect or do-something
-            console.log('Login success?')
+            navigate('/')
+            console.log(isAuthenticated);
           } else {
             //Throw error
+            alert("Login Failed. Try Again");
           }
         }
     
       })
   }
-
 
 
   return (
