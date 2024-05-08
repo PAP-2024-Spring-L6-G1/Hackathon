@@ -29,6 +29,7 @@ export default function Login() {
             // Redirect or do-something
             navigate('/');
             console.log("isAuthenticated: " + isAuthenticated);
+            window.location.reload();
           } else {
             //Throw error
           }
