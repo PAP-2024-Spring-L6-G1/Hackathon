@@ -18,5 +18,5 @@ Our final project is to create a responsive Hackathon website, enabling organiza
   * Challenges with integrating with MongoDB - IP whitelist and using environment variables instead of .env file for secrets
 * Our JWT data was missing the "exp" expiration time in the payload, so [our authentication library was removing the cookie immediately](https://github.com/react-auth-kit/react-auth-kit/issues/1653)
   * Fix: add an expiration to every token we sign
-* [Our authentication library does not refresh components when sign in state changes](https://github.com/react-auth-kit/react-auth-kit/issues/1541)
-  * Fix: ????
+* Our authentication library does not refresh components when sign in state changes [Issue #1541]](https://github.com/react-auth-kit/react-auth-kit/issues/1541)
+  * Workaround until v4 releases: force a `window.location.refresh()`
