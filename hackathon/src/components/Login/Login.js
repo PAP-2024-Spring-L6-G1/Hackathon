@@ -17,7 +17,7 @@ export default function Login() {
     axios.post('https://hackathon-api-mcpt.onrender.com/user/login', formData)
       .then((res) => {
         if (res.status === 200) {
-          console.log(res)
+          // console.log(res)
           if (signIn({
             auth: {
               token: res.data.token,

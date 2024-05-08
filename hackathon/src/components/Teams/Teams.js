@@ -12,14 +12,15 @@ export default function Teams() {
     axios.get("https://hackathon-api-mcpt.onrender.com/team") 
     .then((res) => {
       if (res.status === 200) {
-        console.log(res.data);
-        // TODO: utilize useState to store data
-        // app will have no knowledge of data after request
+        // console.log(res.data);
         setTeamsData(res.data);
       } 
       else {
         console.log(res.status);
       }
+    }).catch(err => {
+      alert("Teams request failed");
+      // console.log(err);
     });
   }
 
@@ -33,7 +34,8 @@ export default function Teams() {
   };
 
   const styleList = {
-      listStyle: "disc"
+      listStyle: "disc",
+      padding: "1.25rem"
   }
 
   return (
