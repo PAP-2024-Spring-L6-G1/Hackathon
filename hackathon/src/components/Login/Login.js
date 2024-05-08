@@ -28,13 +28,14 @@ export default function Login() {
           })) { // Only if you are using refreshToken feature
             // Redirect or do-something
             navigate('/');
-            console.log(isAuthenticated);
+            console.log("isAuthenticated: " + isAuthenticated);
           } else {
             //Throw error
-            alert("Login Failed. Try Again");
           }
         }
-    
+      }).catch(err => {
+        alert("Login failed");
+        // console.log(err);
       })
   }
 
