@@ -27,7 +27,7 @@ export default function Login() {
             userState: res.data.authUserState
           })) { // Only if you are using refreshToken feature
             // Redirect or do-something
-            navigate('/')
+            navigate('/');
             console.log(isAuthenticated);
           } else {
             //Throw error
